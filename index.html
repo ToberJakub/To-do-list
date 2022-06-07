@@ -5,12 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/section.css">
+
     <title>TODO List</title>
 </head>
 <body>
-    <form class="js-form">
-    <input class="js-newTask">
-    <button>Dodaj zadanie</button>
+    <main class="container">
+    <header>
+    <h1>Lista zadań</h1>
+</header>
+<section class="section">
+    <h2 class="section__header">Dodaj nowe zadanie</h2>
+    <div class="section__body">
+        <form class="form js-form">
+            <input class="form__input js-newTask" placeholder="Co jest do zrobienia?">
+            <button>Dodaj zadanie</button>
+
+</main>
     </form>
     <ul class="js-tasks"></ul>
 </body>
