@@ -1,5 +1,13 @@
 {
-    const tasks = [];
+    const tasks = [
+        {
+            content: "Nie wiem"
+        },
+        { 
+            content: "Dlaczego"
+        
+    },
+    ]
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
@@ -56,7 +64,7 @@
             </li>
             `;
             }
-            document.querySelector(".js-tasks").innerHTML = htmlString;
+               document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
 
             bindRemoveEvents();
             bindToggleDoneEvents();
