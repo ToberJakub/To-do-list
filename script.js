@@ -50,7 +50,7 @@
                 tasksListHTMLContent += `
 
             <li
-            class="tasks__item js-task"
+            class="tasks__item${task.done && hideDoneTasks ? "tasks__item-hidden : "" }js-task"
             >
             <button class="tasks__button tasks__button-toggleDone js-toggleDone">
             ${task.done ? "✔️" : ""}
