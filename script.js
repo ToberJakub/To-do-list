@@ -9,6 +9,13 @@
        tasks = [...tasks, {content: newTaskContent}];
            render();
     };
+const markAllTasksDone = () => {
+ tasks = tasks.map((task) => ([
+  ...task,
+  done: true,
+  }));
+ render();
+ 
     const removeTask = (taskIndex) => {
         tasks = [
         ...tasks.slice(0, taskIndex),
@@ -27,7 +34,11 @@
             ];
                 
         render();
-    }
+    };
+ const toggleHideDoneTasks () => {
+  hideDoneTasks = !hideDoneTasks;
+  render();
+ };
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -49,11 +60,8 @@
     
 
 
-    const render = () => {
-            let tasksListHTMLContent = "";
-
-            for (const task of tasks) {
-                tasksListHTMLContent += `
+    const renderTasks = () => {
+            const taskToHTML = task => `
 
             <li
             class="tasks__item${task.done && hideDoneTasks ? "tasks__item-hidden" : "" }js-task"
@@ -70,12 +78,19 @@
             </li>
             `;
             }
-               document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
+            const taskElement = document.querySelector(".js-tasks");
+         taskELement.innerHTML = tasks.map(taskToHTML).join("");
 
             bindRemoveEvents();
             bindToggleDoneEvents();
 
         };  
+ const renderButtons = () =>
+ const buttonsElement = document.querySelector(".js-buttons")
+ 
+ if (!tasks.lenght {
+     buttonsElement.innerHTML = "";
+     return;
 
         const onFormSubmit = (event) => {
             event.preventDefault();
